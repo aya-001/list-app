@@ -20,32 +20,19 @@
           <span class="id-column">ID</span>
           <span>Item</span>
         </div>
-        <% const items = [
-        {id: 1, name:'potatoes'},
-        {id: 2, name:'carrots'},
-        {id: 3, name:'onions'}
-        ]; %>
+        
 
         <ul class="table-body">
-          <% items.forEach((item) => { %>
+          <% ShoppingLIst.forEach((ShoppingLIst) => { %>
          
           <li>
             
-            <span class="id-column"><%= item.id %></span>
+            <span class="id-column"><%= ShoppingLIst.id %></span>
 
-            <span class="name-column"><%= item.name %></span>
+            <span class="name-column"><%= ShoppingLIst.name %></span>
           
           
-            <!-- <div class="item-date"></div>
-         <span class="id-column"><%= item.id %></span>
-
-         <span class="name-column"><%= item.name %></span>
-       </div>
-       <div class="item-menu">
-         <form action="/delete" method="post" >
-           <input type="submit" value="Delete">
-         </form>
-       </div> -->
+ 
          
           </li>
         <% }); %>

@@ -31,11 +31,11 @@ res.render('top.ejs');
 
 
 app.get('/index',(req,res) => {
-   db.all(
+   db.all(     //call back all of datas//
 'SELECT*FROM ShoppingLIst',
 (error,results) => {
    console.log(results);//output on the terminal where the server is running.//
-   res.render('index.ejs');
+   res.render('index.ejs',{ShoppingLIst: results}); //Pass an object //
 }
 );
 
