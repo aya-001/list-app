@@ -24,15 +24,13 @@
         
 
         <ul class="table-body">
-          <% var i = 0 %>
-          <% ShoppingList.forEach((ShoppingListItem) => { %>
-            <% i++ %>
+          <% for (var i = 0; i < ShoppingList.length; i++) { %>
          
           <li>
             <div class = "item-data">
-              <span class="id-column"><%= i %></span>
-              <span class="name-column"><%= ShoppingListItem.name %></span>
-              <span class="number-column"><%= ShoppingListItem.number %></span>
+              <span class="id-column"><%= i + 1 %></span>
+              <span class="name-column"><%= ShoppingList[i].name %></span>
+              <span class="number-column"><%= ShoppingList[i].number %></span>
             </div>
             
           <div class ="item-menu">
@@ -45,7 +43,7 @@
           </div>
  
           </li>
-          <% }); %>
+          <% } %>
         </ul>
       </div>
     </div>
