@@ -34,11 +34,11 @@
             </div>
             
           <div class ="item-menu">
-            <form action= "/delete/<%= ShoppingList.id %>" method ="post">
+            <form action= "/delete/<%= ShoppingList[i].id %>" method ="post">
               <input type = "submit" value ="Delete">
             </form>
 
-            <a href="/edit/<%= ShoppingList.id %>">Edit</a>
+            <a href="/edit/<%= ShoppingList[i].id %>">Edit</a>
              
           </div>
  
