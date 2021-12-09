@@ -19,27 +19,33 @@
         <div class="table-head">
           <span class="id-column">ID</span>
           <span>Item</span>
+          <span>Number</span>
         </div>
         
 
         <ul class="table-body">
-          <% ShoppingList.forEach((ShoppingList) => { %>
+          <% var i = 0 %>
+          <% ShoppingList.forEach((ShoppingListItem) => { %>
+            <% i++ %>
          
           <li>
             <div class = "item-data">
-              <span class="id-column"><%= ShoppingList.id %></span>
-              <span class="name-column"><%= ShoppingList.name %></span>
+              <span class="id-column"><%= i %></span>
+              <span class="name-column"><%= ShoppingListItem.name %></span>
+              <span class="number-column"><%= ShoppingListItem.number %></span>
             </div>
             
           <div class ="item-menu">
             <form action= "/delete/<%= ShoppingList.id %>" method ="post">
               <input type = "submit" value ="Delete">
             </form>
+
+            <a href="/edit/<%= ShoppingList.id %>">Edit</a>
              
           </div>
  
           </li>
-        <% }); %>
+          <% }); %>
         </ul>
       </div>
     </div>
