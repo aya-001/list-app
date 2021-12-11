@@ -188,8 +188,10 @@ header {
 }
 
 /* index ================================ */
+
 .table-head {
   display: flex;
+  justify-content: space-between;
   background-color: #b7cadc;
   border-radius: 2px 2px 0 0;
   height: 44px;
@@ -207,6 +209,8 @@ header {
   background-color: #ffffff;
 }
 
+
+
 .table-body li {
   height: 72px;
   border: 1px solid #f0f4f9;
@@ -222,6 +226,12 @@ header {
 }
 
 .table-body .name-column {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8491a5;
+}
+
+.table-body .number-column {
   font-size: 14px;
   font-weight: 500;
   color: #8491a5;

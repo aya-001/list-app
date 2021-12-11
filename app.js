@@ -58,17 +58,39 @@ app.post('/create', (req, res) => {
 
 app.post('/delete/:id', (req, res) => {
    db.all(
-    'DELETE FROM ShoppingList WHERE id = ?',
-    [req.params.id],
-    (error,results) =>{
+      'DELETE FROM ShoppingList WHERE id = ?',
+      [req.params.id],
+      (error, results) => {
+         res.redirect('/index');
+      }
+   );
+});
+
+app.get('/edit/:id', (req, res) => {
+   db.all(
+      'SELECT* FROM ShoppingList WHERE id =?',
+      [req.params.id],
+      (error,results) =>{
+   res.render('edit.ejs',{ShoppingList: results[0]});
+      }
+   );
+}
+);
+
+app.post('/update/:id', (req, res) => {
+   db.all(
+    'UPDATE ShoppingList SET name = ? WHERE id = ?',
+    [req.body.itemName,  req.params.id],
+    (error,results) => {
        res.redirect('/index');
     }
    );
-   });
-app.get('/edit/:id',(req,res) =>{
-   res.render('edit.ejs');
 }
 );
+
+
+
+
 
 /*Node.js 2 → SQL */
 
